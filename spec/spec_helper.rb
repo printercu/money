@@ -1,5 +1,7 @@
-require 'coveralls'
-Coveralls.wear!
+if ENV['CI']
+  require 'coveralls'
+  Coveralls.wear!
+end
 
 spec_path = File.dirname(__FILE__)
 $LOAD_PATH.unshift(spec_path)
