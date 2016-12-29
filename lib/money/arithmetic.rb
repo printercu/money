@@ -128,12 +128,12 @@ class Money
     # object with this monetary value and the same currency.
     # Can also divide by another +Money+ object to get a ratio.
     #
-    # +Money/Numeric+ returns +Money+. +Money/Money+ returns +Float+.
+    # +Money/Numeric+ returns +Money+. +Money/Money+ returns +BigDecimal+.
     #
     # @param [Money, Numeric] other Number to divide by.
     #
     # @return [Money] The resulting money if you divide Money by a number.
-    # @return [Float] The resulting number if you divide Money by a Money.
+    # @return [BigDecimal] The resulting number if you divide Money by a Money.
     #
     # @example
     #   Money.new(100) / 10            #=> #<Money @amount=10>

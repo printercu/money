@@ -277,7 +277,7 @@ describe Money do
       end
     end
 
-    it "divides Money by Money (same currency) and returns Float" do
+    it "divides Money by Money (same currency) and returns BigDecimal" do
       [
         [Money.new( 13, :USD), Money.new( 4, :USD),  3.25],
         [Money.new( 13, :USD), Money.new(-4, :USD), -3.25],
@@ -288,7 +288,7 @@ describe Money do
       end
     end
 
-    it "divides Money by Money (different currency) and returns Float" do
+    it "divides Money by Money (different currency) and returns BigDecimal" do
       [
         [Money.new( 13, :USD), Money.new( 4, :EUR),  1.625],
         [Money.new( 13, :USD), Money.new(-4, :EUR), -1.625],
@@ -327,7 +327,7 @@ describe Money do
       end
     end
 
-    it "divides Money by Money (same currency) and returns Float" do
+    it "divides Money by Money (same currency) and returns BigDecimal" do
       [
         [Money.new( 13, :USD), Money.new( 4, :USD),  3.25],
         [Money.new( 13, :USD), Money.new(-4, :USD), -3.25],
@@ -338,7 +338,7 @@ describe Money do
       end
     end
 
-    it "divides Money by Money (different currency) and returns Float" do
+    it "divides Money by Money (different currency) and returns BigDecimal" do
       [
         [Money.new( 13, :USD), Money.new( 4, :EUR),  1.625],
         [Money.new( 13, :USD), Money.new(-4, :EUR), -1.625],

@@ -78,12 +78,14 @@ class Money
       #         The +Money+ object to exchange.
       # @param  [Currency, String, Symbol] to_currency
       #         The currency to exchange to.
+      # @param  [Symbol] round_mode
+      #         BigDecimal's rounding mode, to round result using target
+      #         currency's decimal_places.
       #
-      # @yield [n] Optional block to use when rounding after exchanging one
-      #  currency for another.
-      # @yieldparam [Float] n The resulting float after exchanging one currency
-      #  for another.
-      # @yieldreturn [Integer]
+      # @yield [n, currency] Optional block to round value after exchanging.
+      # @yieldparam [BigDecimal, Money::Currency] The resulting amount and
+      #  target currency.
+      # @yieldreturn [Numeric]
       #
       # @return [Money]
       #

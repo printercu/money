@@ -320,17 +320,18 @@ class Money
   #
   # @param [Currency, String, Symbol] other_currency Currency to exchange to.
   #
-  # @yield [n] Optional block to use when rounding after exchanging one currency
-  #  for another.
-  # @yieldparam [Float] n The resulting float after exchanging one currency for
-  #  another.
-  # @yieldreturn [Integer]
+  # @yield [n, currency] Optional block to round value after exchanging.
+  # @yieldparam [BigDecimal, Money::Currency] The resulting amount and
+  #  target currency.
+  # @yieldreturn [Numeric]
   #
   # @return [Money]
   #
   # @example
   #   Money.new(2000, "USD").exchange_to("EUR")
-  #   Money.new(2000, "USD").exchange_to("EUR") {|x| x.round}
+  #   Money.new(2000, "USD").exchange_to("EUR") do |x, currency|
+  #     x.round(currency.decimal_places)
+  #   end
   #   Money.new(2000, "USD").exchange_to(Currency.new("EUR"))
   def exchange_to(other_currency, &rounding_method)
     other_currency = Currency.wrap(other_currency)

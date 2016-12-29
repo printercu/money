@@ -52,11 +52,10 @@ class Money
       # Initializes a new +Money::Bank::Base+ object. An optional block can be
       # passed to dictate the rounding method that +#exchange_with+ can use.
       #
-      # @yield [n] Optional block to use when rounding after exchanging one
-      #  currency for another.
-      # @yieldparam [Float] n The resulting float after exchanging one currency
-      #  for another.
-      # @yieldreturn [Integer]
+      # @yield [n, currency] Optional block to round value after exchanging.
+      # @yieldparam [BigDecimal, Money::Currency] The resulting amount and
+      #  target currency.
+      # @yieldreturn [Numeric]
       #
       # @return [Money::Bank::Base]
       #
@@ -91,14 +90,16 @@ class Money
       # @param [Money] from The +Money+ object to exchange from.
       # @param [Money::Currency, String, Symbol] to_currency The currency
       #  string or object to exchange to.
-      # @yield [n] Optional block to use to round the result after making
-      #  the exchange.
-      # @yieldparam [Float] n The result after exchanging from one currency to
-      #  the other.
-      # @yieldreturn [Integer]
+      # @param  [Symbol] round_mode
+      #         BigDecimal's rounding mode, to round result using target
+      #         currency's decimal_places.
+      # @yield [n, currency] Optional block to round value after exchanging.
+      # @yieldparam [BigDecimal, Money::Currency] The resulting amount and
+      #  target currency.
+      # @yieldreturn [Numeric]
       #
       # @return [Money]
-      def exchange_with(from, to_currency, &block)
+      def exchange_with(from, to_currency, rounding_mode = nil, &block)
         raise NotImplementedError, "#exchange_with must be implemented"
       end
 
