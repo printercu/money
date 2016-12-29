@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Change Fixnum -> Integer. Fixes warnings in ruby 2.4.
+
 ## 7.0.0.rc1
 
 - Moved `lib/money/money/* -> lib/money`.

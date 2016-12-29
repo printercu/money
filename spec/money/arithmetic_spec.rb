@@ -189,7 +189,7 @@ describe Money do
   end
 
   describe "#*" do
-    it "multiplies Money by Fixnum and returns Money" do
+    it "multiplies Money by Integer and returns Money" do
       [
         [Money.new( 10, :USD),  4, Money.new( 40, :USD)],
         [Money.new( 10, :USD), -4, Money.new(-40, :USD)],
@@ -231,7 +231,7 @@ describe Money do
   end
 
   describe "#/" do
-    it "divides Money by Fixnum and returns Money" do
+    it "divides Money by Integer and returns Money" do
       [
         [Money.usd( 0.13),  4, Money.usd( 0.03)],
         [Money.usd( 0.13), -4, Money.usd(-0.03)],
@@ -316,7 +316,7 @@ describe Money do
   end
 
   describe "#div" do
-    it "divides Money by Fixnum and returns Money" do
+    it "divides Money by Integer and returns Money" do
       [
         [Money.usd( 0.13),  4, Money.usd( 0.03)],
         [Money.usd( 0.13), -4, Money.usd(-0.03)],
@@ -366,7 +366,7 @@ describe Money do
   end
 
   describe "#divmod" do
-    it "calculates division and modulo with Fixnum" do
+    it "calculates division and modulo with Integer" do
       [
         [Money.new( 0.13, :USD),  4, [Money.new( 0.03, :USD), Money.new( 0.01, :USD)]],
         [Money.new( 0.13, :USD), -4, [Money.new(-0.04, :USD), Money.new(-0.03, :USD)]],
@@ -426,7 +426,7 @@ describe Money do
   end
 
   describe "#modulo" do
-    it "calculates modulo with Fixnum" do
+    it "calculates modulo with Integer" do
       [
         [Money.new( 13, :USD),  4, Money.new( 1, :USD)],
         [Money.new( 13, :USD), -4, Money.new(-3, :USD)],
@@ -463,7 +463,7 @@ describe Money do
   end
 
   describe "#%" do
-    it "calculates modulo with Fixnum" do
+    it "calculates modulo with Integer" do
       [
         [Money.new( 13, :USD),  4, Money.new( 1, :USD)],
         [Money.new( 13, :USD), -4, Money.new(-3, :USD)],
@@ -500,7 +500,7 @@ describe Money do
   end
 
   describe "#remainder" do
-    it "calculates remainder with Fixnum" do
+    it "calculates remainder with Integer" do
       [
         [Money.new( 13, :USD),  4, Money.new( 1, :USD)],
         [Money.new( 13, :USD), -4, Money.new( 1, :USD)],

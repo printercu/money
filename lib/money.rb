@@ -176,7 +176,7 @@ class Money
   # @!attribute [rw] conversion_precision
   # Default the conversion of Rationals precision to 16
   #
-  #   @return [Fixnum] Use this to specify precision for converting Rational
+  #   @return [Integer] Use this to specify precision for converting Rational
   #     to BigDecimal
   class_attribute :conversion_precision
   self.conversion_precision = 16
@@ -271,10 +271,10 @@ class Money
   attr_reader :currency, :bank, :amount
   alias_method :to_d, :amount
 
-  # Returns a Fixnum hash value based on the +fractional+ and +currency+ attributes
+  # Returns a Integer hash value based on the +fractional+ and +currency+ attributes
   # in order to use functions like & (intersection), group_by, etc.
   #
-  # @return [Fixnum]
+  # @return [Integer]
   #
   # @example
   #   Money.new(100).hash #=> 908351

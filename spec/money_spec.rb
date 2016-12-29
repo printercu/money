@@ -187,7 +187,7 @@ describe Money do
     it "stores fractional as an integer regardless of what is passed into the constructor" do
       m = Money.new(1)
       expect(m.fractional).to eq 100
-      expect(m.fractional).to be_a(Fixnum)
+      expect(m.fractional).to be_a(Integer)
     end
 
     context "loading a serialized Money via YAML" do

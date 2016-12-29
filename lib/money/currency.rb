@@ -342,10 +342,10 @@ class Money
       end
     end
 
-    # Returns a Fixnum hash value based on the +id+ attribute in order to use
+    # Returns a Integer hash value based on the +id+ attribute in order to use
     # functions like & (intersection), group_by, etc.
     #
-    # @return [Fixnum]
+    # @return [Integer]
     #
     # @example
     #   Money::Currency.new(:usd).hash #=> 428936
@@ -387,7 +387,7 @@ class Money
     # Note that MGA and MRO are exceptions and are rounded to 1
     # @see https://en.wikipedia.org/wiki/ISO_4217#Active_codes
     #
-    # @return [Fixnum]
+    # @return [Integer]
     def exponent
       Math.log10(subunit_to_unit).round
     end

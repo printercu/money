@@ -42,13 +42,13 @@ RSpec.describe Money, 'compatibility' do
     end
 
     describe '#+' do
-      it "adds Fixnum 0 to money and returns the same ammount" do
+      it "adds Integer 0 to money and returns the same ammount" do
         expect(usd(10_00) + 0).to eq usd(10_00)
       end
     end
 
     describe '#-' do
-      it "subtract Fixnum 0 to money and returns the same ammount" do
+      it "subtract Integer 0 to money and returns the same ammount" do
         expect(usd(10_00) - 0).to eq usd(10_00)
       end
     end

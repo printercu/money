@@ -35,7 +35,7 @@ class Money
     #
     # @param [Money] other Value to compare with.
     #
-    # @return [Fixnum]
+    # @return [Integer]
     #
     # @raise [TypeError] when other object is not Money
     #
@@ -151,9 +151,9 @@ class Money
     # Divide money by money or fixnum and return array containing quotient and
     # modulus.
     #
-    # @param [Money, Fixnum] other Number to divmod by.
+    # @param [Money, Integer] other Number to divmod by.
     #
-    # @return [Array<Money,Money>,Array<Fixnum,Money>]
+    # @return [Array<Money,Money>,Array<Integer,Money>]
     #
     # @example
     #   Money.new(100).divmod(9)            #=> [#<Money @amount=11>, #<Money @amount=1>]
@@ -171,7 +171,7 @@ class Money
 
     # Equivalent to +divmod(other)[1]+
     #
-    # @param [Money, Fixnum] other Number take modulo with.
+    # @param [Money, Integer] other Number take modulo with.
     #
     # @return [Money]
     #
@@ -186,7 +186,7 @@ class Money
 
     # If different signs +modulo(other) - other+ otherwise +modulo(other)+
     #
-    # @param [Money, Fixnum] other Number to rake remainder with.
+    # @param [Money, Integer] other Number to rake remainder with.
     #
     # @return [Money]
     #
