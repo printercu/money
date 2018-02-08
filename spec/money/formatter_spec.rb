@@ -364,6 +364,15 @@ describe Money::Formatter do
           to eq '1,00,000.0000'
         expect(Money.usd(100000).format(south_asian: true)).to eq '$1,00,000.00'
       end
+
+      specify "works with no_cents_if_whole: true" do
+        expect(Money.new(100000, 'INR').
+          format(south_asian: true, symbol: false, no_cents_if_whole: true)).
+          to eq "1,00,000"
+        expect(Money.new(100000, 'INDIAN_BAR').
+          format(south_asian: true, symbol: false, no_cents_if_whole: true)).
+          to eq "1,00,000"
+      end
     end
 
     describe ':delimiter option' do
